@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>jamshid IT</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      transition: background-color 0.4s, color 0.4s;
+    }
+
+    /* Light mode */
+    body.light {
+      background-color: #d2c4b0; /* och fon */
+      color: #000000; /* qora matn */
+    }
+
+    /* Dark mode */
+    body.dark {
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 80px;
+    }
+
+    nav a {
+      text-decoration: none;
+      margin: 0 15px;
+      color: inherit;
+      font-weight: 500;
+    }
+
+    .buttons button {
+      margin-left: 10px;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .light-btn {
+      background-color: #f5c26b;
+      color: #000;
+    }
+
+    .dark-btn {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 80px;
+      transition: all 0.4s;
+    }
+
+    .text {
+      max-width: 500px;
+    }
+
+    .text h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .text p {
+      color: #222; /* light mode uchun qora matn */
+      line-height: 1.6;
+    }
+
+    body.dark .text p {
+      color: #cfcfcf; /* dark mode uchun oq matn */
+    }
+
+    .image img {
+      width: 480px;
+      border-radius: 10px;
+      transition: opacity 0.4s ease;
+    }
+
+    /* Rasm o‘tish */
+    .image img.dark {
+      display: none;
+    }
+
+    body.dark .image img.light {
+      display: none;
+    }
+
+    body.dark .image img.dark {
+      display: block;
+    }
+
+    .btn-get {
+      margin-top: 25px;
+      background-color: #ff9b0f;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body class="light">
+  <header>
+    <h2>LOGO</h2>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About us</a>
+      <a href="#">Portfolio</a>
+    </nav>
+    <div class="buttons">
+      <button class="light-btn" id="lightMode">LightMode</button>
+      <button class="dark-btn" id="darkMode">DarkMode</button>
+    </div>
+  </header>
+
+  <section class="content">
+    <div class="text">
+      <h1>Work that we produce for our clients</h1>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry's standard.
+      </p>
+      <button class="btn-get">Get more details</button>
+    </div>
+
+    <div class="image">
+      <!-- 🔽 O‘Z RASMLARINGNI SHU YERGA QO‘Y -->
+      <img src="Rectangle 24.png" class="light" alt="Light Mode Image">
+      <img src="Rectangle 24.png" class="dark" alt="Dark Mode Image">
+    </div>
+  </section>
+
+  <script>
+    const body = document.body;
+    const lightBtn = document.getElementById('lightMode');
+    const darkBtn = document.getElementById('darkMode');
+
+    lightBtn.addEventListener('click', () => {
+      body.classList.remove('dark');
+      body.classList.add('light');
+    });
+
+    darkBtn.addEventListener('click', () => {
+      body.classList.remove('light');
+      body.classList.add('dark');
+    });
+  </script>
+</body>
+</html>
